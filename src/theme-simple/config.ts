@@ -23,4 +23,43 @@ export const config = {
         { name: 'Archive', path: '/archive' },
         { name: 'About', path: '/about' },
     ],
+    archive: {
+        title: "Archive",
+        description: "Archive description",
+    },
+    indexBanner:{
+        swiper:[
+            {
+                title:"欢迎访问本站",
+                imgUrl:"https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/38.jpg",
+                desc:"欢迎访问本站欢迎访问本站欢迎访问本站",
+                url:"/"
+            },
+            {
+                title:"欢迎访问本站",
+                imgUrl:"https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/37.jpg",
+                desc:"欢迎访问本站欢迎访问本站欢迎访问本站",
+                url:"/"
+            },
+            {
+                title:"欢迎访问本站",
+                imgUrl:"https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/36.jpg",
+                desc:"欢迎访问本站欢迎访问本站欢迎访问本站",
+                url:"/"
+            }
+        ],
+        recommend1:{
+            title:"欢迎访问本站",
+            imgUrl:"https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/36.jpg",
+            desc:"欢迎访问本站欢迎访问本站欢迎访问本站",
+            url:"/"
+        },
+        recommend2:{
+            title:"欢迎访问本站",
+            imgUrl:"https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/33.jpg",
+            desc:"欢迎访问本站欢迎访问本站欢迎访问本站",
+            url:"/"
+        }
+
+    }
 } as any

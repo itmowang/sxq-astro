@@ -1,0 +1,125 @@
+---
+import { config } from "@/theme-simple/config";
+const swiper = config.indexBanner.swiper;
+const recommend1 = config.indexBanner.recommend1;
+const recommend2 = config.indexBanner.recommend2;
+---
+
+<div class="flex justify-center mt-4">
+  <div
+    class="container bg-white text-red shadow rounded-md p-4 content h-[336px]"
+  >
+    <div class="flex h-full">
+      <!-- 轮播 -->
+      <div class="w-4/5">
+        <div class="flex items-center h-full w-full">
+          <div class="relative h-full w-full">
+            <div class="carousel h-full">
+              {
+                swiper.map((item) => {
+                  return (
+                    <div class="slide h-full relative cursor-pointer">
+                      <div class="absolute inset-0 bg-black/50 opacity-5 z-5" />
+                      <img
+                        class="w-full h-full object-cover rounded-md"
+                        src={item.imgUrl}
+                        alt={item.url}
+                      />
+                      <div class="absolute inset-0 flex items-center justify-center">
+                        <h1 class="text-white text-4xl font-bold">
+                          {item.title}
+                        </h1>
+                      </div>
+                    </div>
+                  );
+                })
+              }
+            </div>
+            <div
+              class="carousel-controls absolute bottom-0 left-0 right-0 flex justify-center mt-2"
+            >
+              <button
+                class="prev-btn bg-gray-500 text-white px-4 py-2 rounded-l"
+                >Prev</button
+              >
+              <button
+                class="next-btn bg-gray-500 text-white px-4 py-2 rounded-r"
+                >Next</button
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 推荐 -->
+      <div class="w-1/5 flex flex-col-reverse pl-4">
+        <!-- 推荐1 -->
+        <div class="w-full h-1/2 pt-2 relative cursor-pointer ">
+          <img
+            src={recommend1.imgUrl}
+            class="w-full h-full object-cover rounded-md hover:shadow-md"
+          />
+          <div
+            class="w-full absolute bottom-0 bg-gradient-to-b from-transparent to-black h-fit rounded-md text-white text-center"
+          >
+            {recommend1.title}
+          </div>
+        </div>
+        <!-- 推荐2 -->
+        <div class="w-full h-1/2 pb-2 relative cursor-pointer ">
+          <img
+            src={recommend2.imgUrl}
+            class="w-full h-full object-cover rounded-md hover:shadow-md"
+          />
+          <div
+            class="w-full absolute bottom-2 bg-gradient-to-b from-transparent to-black h-fit rounded-md text-white text-center"
+          >
+            {recommend2.title}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll(".slide");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide: any, i) => {
+      if (i === index) {
+        slide.style.display = "block";
+      } else {
+        slide.style.display = "none";
+      }
+    });
+  }
+
+  function prevSlide() {
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = slides.length - 1;
+    }
+    showSlide(currentIndex);
+  }
+
+  function nextSlide() {
+    currentIndex++;
+    if (currentIndex >= slides.length) {
+      currentIndex = 0;
+    }
+    showSlide(currentIndex);
+  }
+
+  prevBtn.addEventListener("click", prevSlide);
+  nextBtn.addEventListener("click", nextSlide);
+
+  showSlide(currentIndex);
+
+  // 每隔五秒切换定时器
+  setInterval(() => {
+    nextSlide();
+  }, 5000);
+</script>

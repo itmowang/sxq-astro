@@ -1,0 +1,46 @@
+---
+import { config } from "@/theme-simple/config";
+---
+
+<div class="flex justify-center mt-4 w-full">
+  <div class="container">
+    <div class="grid gap-4 lg:grid-cols-2 md:grid-cols-2">
+      {
+        Array.from({ length: 10 }).map((item) => {
+          return (
+            <div class="basis-1/2 w-full bg-white rounded-md p-4 h-[150px] shadow flex">
+              <div class="w-1/4 ">
+                <img
+                  src="https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/33.jpg"
+                  class="h-full object-cover"
+                />
+              </div>
+              <div class="w-3/4 ml-4 flex flex-col justify-between">
+                <div>
+                  <div class="title text-xl	mb-2">[更新记录] 博客更新优化记录</div>
+                  <div class="">
+                    本博客优化模板基于Joe原版来进行美化 目前主题最新版为7.3.7
+                    而博主的是7.3.6 由于7.3.7改动不大 我不会更新到最新！
+                  </div>
+                </div>
+
+                <div class="flex justify-between leading-8 mt-2">
+                  <div class="flex ">
+                    <div> 2023-01-23 </div>
+                    <div class="mx-2"> / </div>
+                    <div> 1234 </div>
+                    <div class="mx-2"> / </div>
+                    <div> 22 </div>
+                  </div>
+                  <div>
+                    <div>分类1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</div>
