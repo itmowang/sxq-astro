@@ -1,0 +1,31 @@
+---
+import BaseHead from '@/theme-simple/components/_blocks/baseHead.astro'
+
+import Header from '@/theme-simple/components/Header.astro'
+import TopBanner from '@/theme-simple/components/TopBanner.astro'
+import bg from '@/theme-simple/assets/media/bg.jpeg'
+import '@/theme-simple/assets/styles/global.less'
+import { getEntryBySlug } from "astro:content";
+
+const about = await getEntryBySlug("pages", "about");
+const { Content } = await about.render();
+
+---
+
+<html lang="en">
+    <head>
+        <BaseHead subtitle={about.data.title}/>
+    </head>
+	<body>
+		<div class=` h-screen bg-cover bg-white` style=`background-image: url(${bg.src})`>
+			<Header/>
+			<TopBanner />
+            <div class="flex justify-center mt-4">
+                <div class="container bg-white text-red shadow rounded-md p-4">
+                    <Content/>
+                </div>
+            </div>
+          
+		</div> 
+	</body>
+</html>

@@ -8,4 +8,4 @@ export default defineConfig({
   // 规范链接
   outDir: "./docs", // 打包输出路径
   integrations: [tailwind()]
-});
+}); 

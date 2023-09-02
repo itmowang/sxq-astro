@@ -1,82 +1,81 @@
 body {
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAAEEfUpiAAAAAXNSR0IArs4c6QAAArtJREFUWAntV01rGlEUHWuibcU2TVPTRonJpiL2a1FbaEtpAvobanGnIK4qKQjuhP4GseDWjYuii9CNiyJCN134segiJGlAcKELQWJDFZmeM+0TDRM/ppVuvHCceXfuPXPvfe/dN0qSmmxvb8vn9cvnFWPGFouF/pcHJjIEA/1AoXoTjUZpdfGbyFssFuVAIDDKP0Q34R1DlppuN/D+t+M87Qyy0Wh8VjO6RKVer5cymcyrXq/XUjPahPIxQOMlNQOdmvLf6wxI9SloNVdUKYXb7ZYPDg4+gMgwbYwiQRKcCCedTicdHh4emc3mB9D9EPpxVyWCVqvVgNET4CHwHHADJmCirMDiHnB1ouXCQLUCunq9/gZPrqg+nUK5zN7Rbre7sOVsiLUxhetvEwMJuCmPj4/ZNdYAZR9OyzAgIEmhUJB3d3fts5CMEJAklUrJ8Xicm3zi5hrpAHCUut2uVCqVpEgk8nV9ff1FOBz+AiKmdqEoEfh8PtnpdL6G1X2Ae+AlwFQmikKQTqeTsBQFZOiMbmIKZF8yGo13cbUBM1WfzkL4Js3OgmRx1ViB4XnmLvxvM8FAVrCpe/1+/zSfz7O/XAO4GGduD/CZWXiQbYq2srOzw/O+Xy6X30O/CvALZq6BMAC7CIAdhXC5XHKlUpFrtdrHra2t27AxAnOZJtUARCA2m03OZrMyDt5SMBh0Igi2/+H1g6E2mSobtshQKCQ5HI5H+Jb9dnZ2dpRIJNjteOr/VSBiXlmBO5iCE/RgJZVYLCZ5vd5KMpncR5u9brVa1/7I6g2IyWQy5HK5d36//xMcToGxPVshHfMzmAKPxyM3m82fOAj2YM/efhNgpmaAhyZbNqO8BVA3cqhgrEm4yjc6nc73arW6j/tnHANzW3TgVkRMAdcCM+H/DOr4iUD0gYUsKrCowFwr8AukF+p8blYsTwAAAABJRU5ErkJggg==),
-    default; 
-    font-family: "Regular"
+    default;
+  font-family: "Regular";
 }
- 
+
 @font-face {
-    font-family: 'Regular';
-    src: url('../fonts/Regular.ttf') format('truetype');
-  }
+  font-family: "Regular";
+  src: url("../fonts/Regular.ttf") format("truetype");
+}
 .text-shadow {
-    text-shadow: 0 0.1875rem 0.3125rem #1c1f21;
+  text-shadow: 0 0.1875rem 0.3125rem #1c1f21;
 }
 
 .waves {
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 80px;
+  max-height: 150px;
+  .content {
     position: relative;
-    width: 100%;
     height: 10vh;
-    margin-bottom: -7px; /*Fix for safari gap*/
-    min-height:80px;
-    max-height: 150px;
-    .content {
-        position: relative;
-        height: 10vh;
-        text-align: center;
-        background-color: white;
-      }
-      
-      .content a {
-        margin: 0 5px;
-        font-size: 12px;
-        color: #333;
-      }
-      
-      .content a:hover {
-        color: #000;
-      }
-      
-      /* Animation */
-      
-      .parallax > use {
-        animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-      }
-      .parallax > use:nth-child(1) {
-        animation-delay: -2s;
-        animation-duration: 7s;
-      }
-      .parallax > use:nth-child(2) {
-        animation-delay: -3s;
-        animation-duration: 10s;
-      }
-      .parallax > use:nth-child(3) {
-        animation-delay: -4s;
-        animation-duration: 13s;
-      }
-      .parallax > use:nth-child(4) {
-        animation-delay: -5s;
-        animation-duration: 20s;
-      }
-      @keyframes move-forever {
-        0% {
-            transform: translate3d(-90px, 0, 0);
-        }
-        100% {
-            transform: translate3d(85px, 0, 0);
-        }
-      }
-      /*Shrinking for mobile*/
-      @media (max-width: 768px) {
-        .waves {
-            height: 40px;
-            min-height: 40px;
-        }
-        .content {
-            height: 30vh;
-        }
-        h1 {
-            font-size: 24px;
-        }
-      }
+    text-align: center;
+    background-color: white;
   }
-  
+
+  .content a {
+    margin: 0 5px;
+    font-size: 12px;
+    color: #333;
+  }
+
+  .content a:hover {
+    color: #000;
+  }
+
+  /* Animation */
+
+  .parallax > use {
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+  }
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+  @keyframes move-forever {
+    0% {
+      transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+      transform: translate3d(85px, 0, 0);
+    }
+  }
+  /*Shrinking for mobile*/
+  @media (max-width: 768px) {
+    .waves {
+      height: 40px;
+      min-height: 40px;
+    }
+    .content {
+      height: 30vh;
+    }
+    h1 {
+      font-size: 24px;
+    }
+  }
+}
