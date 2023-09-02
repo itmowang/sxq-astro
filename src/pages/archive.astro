@@ -1,39 +1,43 @@
 ---
-import BaseHead from '@/theme-simple/components/_blocks/baseHead.astro'
-import ContentHtml from '@/theme-simple/components/layout/Content.astro'
-import Header from '@/theme-simple/components/Header.astro'
-import TopBanner from '@/theme-simple/components/TopBanner.astro'
-import bg from '@/theme-simple/assets/media/bg.jpeg'
-import '@/theme-simple/assets/styles/global.less'
+import BaseHead from "@/theme-simple/components/_blocks/baseHead.astro";
+import ContentHtml from "@/theme-simple/components/layout/Content.astro";
+import Header from "@/theme-simple/components/Header.astro";
+import TopBanner from "@/theme-simple/components/TopBanner.astro";
+import bg from "@/theme-simple/assets/media/bg.jpeg";
+import "@/theme-simple/assets/styles/global.less";
 import { getCollection } from "astro:content";
 import { config } from "@/theme-simple/config";
 
-const posts = (await getCollection("blog"));
-
+const posts = await getCollection("blog");
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead subtitle={config.archive.title} />
-	</head>
-	<body>
-		<ContentHtml>
-			<Header/>
-			<TopBanner /> 
-			<div class="flex justify-center mt-4">
-                <div class="container bg-white text-red shadow rounded-md p-4 content">
-					<ul>
-                    {
-						posts.map((item:any,index)=>{
-							return <li class="cursor-pointer flex justify-between my-2 hover:text-sky-300 transition ease-in-out delay  duration-300"> 
-								<div> {index} . {item.data.title}  </div>
-								<div> {item.data.pubDate} </div>
-								</li>
-						})
-					}
-					</ul>
-                </div>
-            </div>
-		</ContentHtml>
-	</body>
+  <head>
+    <BaseHead subtitle={config.archive.title} />
+  </head>
+  <body>
+    <ContentHtml>
+      <Header />
+      <TopBanner />
+      <div class="flex justify-center mt-4">
+        <div class="container bg-white text-red shadow rounded-md p-4 content">
+          <ul>
+            {
+              posts.map((item: any, index) => {
+                return (
+                  <li class="cursor-pointer flex justify-between my-2 hover:text-sky-300 transition ease-in-out delay  duration-300">
+                    <div>
+                      {" "}
+                      {index} . {item.data.title}{" "}
+                    </div>
+                    <div> {item.data.pubDate} </div>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </div>
+      </div>
+    </ContentHtml>
+  </body>
 </html>
