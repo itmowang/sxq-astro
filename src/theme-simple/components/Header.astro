@@ -1,25 +1,32 @@
 ---
 import logo from '@/theme-simple/assets/media/logo.png'
+import { config } from "@/theme-simple/config";
+const {menus} = config
+
 ---
 
 <div id="nav" class="z-50	h-16 w-full backdrop-blur-sm bg-white/30 dark:bg-black/30 flex items-center px-4 justify-center fixed transition duration-500 ease-in-out">
-    <div class="hidden container flex justify-between">
+    <div class="container flex justify-between hidden md:flex">
         <div class="flex items-center">
             <div class="mr-4">
+              <a href='/' title={config.site.title} >
                 <img src={logo.src}  class="w-[150px] h-[40px]" /> 
+              </a>
             </div>
             <div class="flex dark:text-white">
-                <div class="mr-4 cursor-pointer">菜单1</div>
-                <div class="mr-4 cursor-pointer">菜单2</div>
-                <div class="mr-4 cursor-pointer">菜单3</div>
-                <div class="mr-4 cursor-pointer">菜单4</div>
+              {
+                menus.map(item=>{
+                 return  <div class="mr-4 cursor-pointer hover:text-sky-300 transition ease-in-out delay duration-300"> <a href={item.path} title={item.name} > {item.name} </a> </div>
+                })
+              }
+              
             </div>
         </div>
         <div class="flex items-center" id="themeToggle">
             搜索
         </div>
     </div>
-    <div class="container flex justify-between items-center">
+   <div class="flex container  justify-between items-center md:hidden">
       <div>
         菜单
       </div>
@@ -31,7 +38,7 @@ import logo from '@/theme-simple/assets/media/logo.png'
       <div>
         搜索
       </div>
-  </div>
+  </div> 
     
 </div>
 

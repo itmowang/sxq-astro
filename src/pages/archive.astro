@@ -3,7 +3,7 @@ import BaseHead from "@/theme-simple/components/_blocks/baseHead.astro";
 import ContentHtml from "@/theme-simple/components/layout/Content.astro";
 import Header from "@/theme-simple/components/Header.astro";
 import TopBanner from "@/theme-simple/components/TopBanner.astro";
-import bg from "@/theme-simple/assets/media/bg.jpeg";
+import Footer from "@/theme-simple/components/Footer.astro";
 import "@/theme-simple/assets/styles/global.less";
 import { getCollection } from "astro:content";
 import { config } from "@/theme-simple/config";
@@ -16,28 +16,33 @@ const posts = await getCollection("blog");
     <BaseHead subtitle={config.archive.title} />
   </head>
   <body>
-    <ContentHtml>
+    <div class=`h-screen`>
       <Header />
       <TopBanner />
-      <div class="flex justify-center mt-4">
-        <div class="container bg-white text-red shadow rounded-md p-4 content">
-          <ul>
-            {
-              posts.map((item: any, index) => {
-                return (
-                  <li class="cursor-pointer flex justify-between my-2 hover:text-sky-300 transition ease-in-out delay  duration-300">
-                    <div>
-                      {" "}
-                      {index} . {item.data.title}{" "}
-                    </div>
-                    <div> {item.data.pubDate} </div>
-                  </li>
-                );
-              })
-            }
-          </ul>
+      <ContentHtml>
+        <div class="flex justify-center mt-4 ">
+          <div
+            class="container bg-white text-red shadow rounded-md p-4 content min-h-[50vh]	"
+          >
+            <ul>
+              {
+                posts.map((item: any, index) => {
+                  return (
+                    <li class="cursor-pointer flex justify-between my-2 hover:text-sky-300 transition ease-in-out delay  duration-300">
+                      <div>
+                        {" "}
+                        {index} . {item.data.title}{" "}
+                      </div>
+                      <div> {item.data.pubDate} </div>
+                    </li>
+                  );
+                })
+              }
+            </ul>
+          </div>
         </div>
-      </div>
-    </ContentHtml>
+        <Footer />
+      </ContentHtml>
+    </div>
   </body>
 </html>
