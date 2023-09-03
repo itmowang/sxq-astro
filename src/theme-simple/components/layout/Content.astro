@@ -2,6 +2,25 @@
 import bg from "@/theme-simple/assets/media/bg.jpeg";
 
 ---
-<div class="pb-6 bg-cover bg-white "  style=`background-image: url(${bg.src})` >
+
+
+<div id="contextAs" class={`pb-6 bg-cover bg-white dark:bg-darkBg1 `} style=`background-image: url(${bg.src})` >
     <slot></slot>
 </div>
+
+<script>
+     const theme = (() => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
+        return 'light';
+    })();
+
+    if(theme=='dark'){
+        document.getElementById('contextAs').style.backgroundImage=''
+    }
+
+</script>

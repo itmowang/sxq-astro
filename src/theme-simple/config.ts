@@ -61,5 +61,27 @@ export const config = {
             url:"/"
         }
 
+    },
+    util:{
+        convertTime(timeString, format) {
+            const date = new Date(timeString);
+            let convertedTime = '';
+            switch (format) {
+              case 'hh:mm:ss':
+                convertedTime = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                break;
+              case 'hh:mm':
+                convertedTime = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                break;
+              case 'YYYY-MM-DD':
+                convertedTime = date.toISOString().split('T')[0];
+                break;
+              // 添加其他格式的转换
+              default:
+                convertedTime = date.toString();
+                break;
+            }
+            return convertedTime;
+          }
     }
 } as any

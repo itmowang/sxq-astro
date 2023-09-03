@@ -1,10 +1,11 @@
 ---
 import { config } from "@/theme-simple/config";
 const {title,description,copy} = config.site
+
 ---
 
 <div class="flex justify-center mt-4">
-  <div class="container bg-white shadow rounded-md p-4  text-center text-block hover:text-sky-300 transition ease-in-out delay duration-300">
+  <div class="container bg-white dark:bg-darkBg2 dark:text-white shadow rounded-md p-4  text-center text-block hover:text-sky-300 transition ease-in-out delay duration-300">
     <div class="23"> <a href="/" title={title}> {title}  -  {description}  -  {copy}  </a> </div>
   </div>
 </div>
