@@ -9,6 +9,10 @@ module.exports = {
       'lg': '1024px',
       'xl': '1350px',
       '2xl': '1536px',
+    },
+    textColor:{
+      darkBg1:"rgb(18,18,18)", // 底层背景色
+      darkBg2:"#232323" // 模板背景色
     }
   },
   plugins: [],
