@@ -1,34 +1,59 @@
 ---
-import banner from '@/theme-simple/assets/media/topimg.jpg'
+import banner from "@/theme-simple/assets/media/topimg.jpg";
+
+interface IProps {
+     title:String
+     desc:String 
+}
+
+const { title , desc } = Astro.props as IProps; 
+
 ---
 
 <div class="h-2/4 w-full relative z-5">
-     <div class="absolute inset-0 bg-black/50 opacity-50 z-5"></div>
-     <img src={banner.src}  class="h-full w-full object-cover"  /> 
-     <!-- 标题 时间 作者信息啥的 -->
-     <div class="absolute inset-0 flex flex-col justify-center items-center">
-          <div class="text-white text-center text-4xl font-semibold text-shadow tracking-widest" > [更新记录] 博客更新优化记录 </div>
-          <div class="flex text-white mt-4">
-               <div class="mx-2 text-shadow font-semibold "> 2021年06月18日 </div>
-               <div class="mx-2 text-shadow font-semibold "> 1,628阅读 </div>
-               <div class="mx-2 text-shadow font-semibold "> 21评论 </div>
-               <div class="mx-2 text-shadow font-semibold "> 43点赞 </div>
-          </div>
-     </div>
-     <!--  云朵波浪 -->
-     <div class="absolute bottom-0 w-full">
-          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-          <defs>
-            <path id="gentle-wave"
-              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-          </defs>
-          <g class="parallax">
-            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-            <use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(255,255,255,0.2)" />
-          </g>
-        </svg>
-     </div>
+  <div class="absolute inset-0 bg-black/50 opacity-50 z-5"></div>
+  <img src={banner.src} class="h-full w-full object-cover" />
+  <!-- 标题 时间 作者信息啥的 -->
+  <div class="absolute inset-0 flex flex-col justify-center items-center">
+    <div
+      class="text-white text-center text-4xl font-semibold text-shadow tracking-widest"
+    >
+      {title} 
+    </div>
+    <div class="flex text-white mt-4">
+     <div class="mx-2 text-shadow font-semibold">{desc}</div>
+      <!-- <div class="mx-2 text-shadow font-semibold">2021年06月18日</div>
+      <div class="mx-2 text-shadow font-semibold">1,628阅读</div>
+      <div class="mx-2 text-shadow font-semibold">21评论</div>
+      <div class="mx-2 text-shadow font-semibold">43点赞</div> -->
+    </div>
+  </div>
+  <!--  云朵波浪 -->
+  <div class="absolute bottom-0 w-full">
+    <svg
+      class="waves"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28"
+      preserveAspectRatio="none"
+      shape-rendering="auto"
+    >
+      <defs>
+        <path
+          id="gentle-wave"
+          d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+        ></path>
+      </defs>
+      <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7"
+        ></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"
+        ></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"
+        ></use>
+        <use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(255,255,255,0.2)"
+        ></use>
+      </g>
+    </svg>
+  </div>
 </div>

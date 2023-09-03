@@ -6,7 +6,7 @@ import TopBanner from "@/theme-simple/components/TopBanner.astro";
 import Footer from "@/theme-simple/components/Footer.astro";
 import "@/theme-simple/assets/styles/global.less";
 import { getCollection } from "astro:content";
-import { config } from "@/theme-simple/config";
+import { config } from "@/theme-simple/config"; 
 
 const posts = await getCollection("blog");
 ---
@@ -18,7 +18,7 @@ const posts = await getCollection("blog");
   <body>
     <div class=`h-screen`>
       <Header />
-      <TopBanner />
+      <TopBanner title={`${config.site.title} - 文章档案`} desc="如果成功有捷径，那一定是努力吧~" />
       <ContentHtml>
         <div class="flex justify-center mt-4 ">
           <div

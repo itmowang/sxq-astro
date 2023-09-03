@@ -6,6 +6,7 @@ import ContentHtml from '@/theme-simple/components/layout/Content.astro'
 import { getEntryBySlug } from "astro:content";
 import Footer from "@/theme-simple/components/Footer.astro";
 
+import { config } from "@/theme-simple/config"; 
 const about = await getEntryBySlug("pages", "about");
 const { Content } = await about.render();
 ---
@@ -17,7 +18,7 @@ const { Content } = await about.render();
 	<body>
         <div class=`h-screen`>
         <Header/>
-		<TopBanner />
+		<TopBanner  title={`${config.site.title} - 文章档案`} desc="努力可能做不到什么，但是已经会给出结果~" />
         <ContentHtml>
             <div class="flex justify-center mt-4 min-h-[50vh]">
                 <div class="container bg-white text-red shadow rounded-md p-4 content">
