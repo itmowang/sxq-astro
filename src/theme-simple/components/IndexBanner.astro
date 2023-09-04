@@ -36,14 +36,14 @@ const recommend2 = config.indexBanner.recommend2;
               }
             </div>
             <div
-              class="carousel-controls absolute bottom-0 left-0 right-0 flex justify-center mt-2"
+              class="h-full carousel-controls absolute bottom-0 left-0 right-0 flex justify-between items-center mt-2"
             >
               <button
-                class="prev-btn bg-gray-500 text-white px-4 py-2 rounded-l"
+                class="prev-btn bg-white/30 text-white dark:bg-black/30 px-4 py-2 ml-2 rounded hover:-translate-y-1 transition ease-in-out delay-150 hover:scale-110  duration-300"
                 >Prev</button
               >
               <button
-                class="next-btn bg-gray-500 text-white px-4 py-2 rounded-r"
+                class="next-btn bg-white/30 text-white dark:bg-black/30 px-4 py-2 mr-2 rounded hover:-translate-y-1 transition ease-in-out delay-150 hover:scale-110  duration-300"
                 >Next</button
               >
             </div>
@@ -53,7 +53,7 @@ const recommend2 = config.indexBanner.recommend2;
       <!-- 推荐 -->
       <div class="w-1/5 flex flex-col-reverse pl-4 hidden md:flex">
         <!-- 推荐1 -->
-        <div class="w-full h-1/2 pt-2 relative cursor-pointer ">
+        <div class="w-full h-1/2 pt-2 relative cursor-pointer">
           <img
             src={recommend1.imgUrl}
             class="w-full h-full object-cover rounded-md hover:shadow-md"
