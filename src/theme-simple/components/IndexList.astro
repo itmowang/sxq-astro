@@ -8,14 +8,14 @@ const {directoryExclusion} = config.util
 ---
 <div class="flex justify-center pt-4  w-full">
   <div class="container">
-    <div class="grid gap-4 lg:grid-cols-2 md:grid-cols-2">
+    <div class="grid gap-4 lg:grid-cols-2 md:grid-cols-2  ">
       {
         posts.map((item) => {
           return (
             <div class="basis-1/2 w-full bg-white dark:bg-darkBg2 dark:text-white  rounded-md p-4 h-[150px] shadow flex">
               <div class="w-2/5 md:w-1/4 ">
                 <img
-                  src="https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/33.jpg"
+                  src={item.data.heroImage||"https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/33.jpg"} 
                   class="h-full object-cover"
                 />
               </div>
