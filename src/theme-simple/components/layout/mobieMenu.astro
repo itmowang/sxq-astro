@@ -1,0 +1,19 @@
+---
+import { config } from "@/theme-simple/config";
+const { menus } = config;
+---
+<div id="mobieMenuList" style="display: none;" class="flex absolute top-16 w-full bg-white/30 dark:bg-darkBg2/80 animate__animated animate__fadeIn"  >
+    <div  class=" w-full left-0 w-64  " >
+      <ul class="py-4 w-full ">
+       { menus.map((item) => {
+            return (
+          <a href={item.path} title={item.name} class="text-gray-800 w-full dark:text-white  "><li class="px-6 py-2 w-full hover:bg-gray-100/30 dark:hover:bg-darkBg2">{item.name}</li></a>
+            )
+        })
+        }
+       
+        
+      </ul>
+    </div>
+   
+  </div>

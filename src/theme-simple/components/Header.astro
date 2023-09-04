@@ -1,7 +1,11 @@
 ---
 import logo from "@/theme-simple/assets/media/logo.png";
+import PcSearch from "./layout/pcSearch.astro";
+import MobieSearch from "./layout/mobieSearch.astro";
+import MobieMenu from "./layout/mobieMenu.astro"
 import { config } from "@/theme-simple/config";
 const { menus } = config;
+ 
 ---
 
 <div
@@ -33,13 +37,13 @@ const { menus } = config;
         }
       </div>
     </div>
-    <div class="flex items-center">
+    <div id="pcSearch" class="flex items-center cursor-pointer">
       <i class="iconfont blog-icon-test1 dark:text-white" style="font-size:26px"
       ></i>
     </div>
   </div>
   <div class="flex container justify-between items-center md:hidden">
-    <div>
+    <div id="mobieMenu">
       <i
         class="iconfont blog-icon-test2 dark:text-white"
         style="font-size:26px;"></i>
@@ -49,11 +53,51 @@ const { menus } = config;
         <img src={logo.src} class="w-[150px] h-[40px]" />
       </div>
     </div>
-    <div>
+    <div id="mobieSearch">
       <i class="iconfont blog-icon-test1 dark:text-white" style="font-size:26px"
       ></i>
     </div>
   </div>
+  <!-- pc 搜索 -->
+  <PcSearch  />
+  <!-- 手机搜索 -->
+  <MobieSearch/>
+  <!-- 手机菜单 -->
+  <MobieMenu/>
 </div>
 
-<script></script>
+<script>
+
+const pcSearch = document.getElementById("pcSearchInput");
+const mobieSearch = document.getElementById("mobieSearchInput");
+const mobieMenu = document.getElementById("mobieMenuList");
+
+document.getElementById("pcSearch")?.addEventListener("click", function (event) {
+  event.stopPropagation();
+  pcSearch && (pcSearch.style.display = pcSearch.style.display === "none" ? "block" : "none");
+});
+
+document.getElementById("mobieSearch")?.addEventListener("click", function (event) {
+  event.stopPropagation();
+  mobieSearch && (mobieSearch.style.display = mobieSearch.style.display === "none" ? "block" : "none");
+});
+
+document.getElementById("mobieMenu")?.addEventListener("click", function (event) {
+  event.stopPropagation();
+  mobieMenu && ( mobieMenu.style.display = mobieMenu.style.display === "none" ? "block" : "none");
+});
+
+document.addEventListener("click", function (event) {
+  if (event.target !== pcSearch) {
+    pcSearch && (pcSearch.style.display = "none");
+  }
+
+  if (event.target !== mobieSearch) {
+    mobieSearch && (mobieSearch.style.display = "none");
+  }
+
+  if (event.target !== mobieMenu) {
+    mobieMenu && (mobieMenu.style.display = "none");
+  }
+});
+</script>
