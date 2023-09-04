@@ -19,9 +19,9 @@ export const config = {
         bio: "Your bio",
     },
     menus: [
-        { name: 'Home', path: '/' },
-        { name: 'Archive', path: '/archive' },
-        { name: 'About', path: '/about' },
+        { name: 'Home', path: '/',icon:"#blog-baozi-01" },
+        { name: 'Archive', path: '/archive',icon:"#blog-take-01"  },
+        { name: 'About', path: '/about',icon:"#blog-shousi-01"  },
     ],
     archive: {
         title: "Archive",
