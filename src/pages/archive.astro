@@ -9,6 +9,7 @@ import { getCollection } from "astro:content";
 import { config } from "@/theme-simple/config"; 
 
 const posts = await getCollection("blog");
+const {directoryExclusion} = config.util
 ---
 
 <html lang="en">
@@ -28,6 +29,7 @@ const posts = await getCollection("blog");
               {
                 posts.map((item: any, index) => {
                   return (
+                  <a href={ `/blog/${directoryExclusion(item.slug)}`} title={item.data.name}>  
                     <li class="cursor-pointer flex justify-between my-2 hover:text-sky-300 transition ease-in-out delay  duration-300">
                       <div>
                         {" "}
@@ -35,6 +37,7 @@ const posts = await getCollection("blog");
                       </div>
                       <div> {item.data.pubDate} </div>
                     </li>
+                  </a>
                   );
                 })
               }

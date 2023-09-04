@@ -4,21 +4,30 @@ import Header from '@/theme-simple/components/Header.astro'
 import TopBanner from '@/theme-simple/components/TopBanner.astro'
 import ContentHtml from '@/theme-simple/components/layout/Content.astro'
 import Footer from "@/theme-simple/components/Footer.astro";
-
-import { getEntryBySlug } from "astro:content";
 import { config } from "@/theme-simple/config"; 
-const about = await getEntryBySlug("pages", "about");
-const { Content } = await about.render();
+
+import { getCollection } from "astro:content"; 
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: config.util.directoryExclusion(post.slug) },
+		props: post,
+	}));
+} 
+
+const post = Astro.props;
+const { Content } = await post.render(); 
 ---
 
 <html lang="en">
     <head>
-        <BaseHead subtitle={about.data.title}/>
+        <BaseHead subtitle={post.data.title} />
     </head>
 	<body>
         <div class=`h-screen `>
         <Header/>
-		<TopBanner  title={`${config.site.title} - 文章档案`} desc="努力可能做不到什么，但是已经会给出结果~" />
+		<TopBanner  title={` ${post.data.title} - ${config.site.title}`} desc={post.data.title} />
         <ContentHtml>
             <div class=" flex justify-center pt-4 min-h-[50vh]">
                 <div class="container bg-white dark:bg-darkBg2 dark:text-white  text-red shadow rounded-md p-4 content">

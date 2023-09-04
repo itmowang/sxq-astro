@@ -82,6 +82,9 @@ export const config = {
                 break;
             }
             return convertedTime;
-          }
+        },
+        directoryExclusion(str){
+            return str.replace(/\/.*/, '')
+        }
     }
 } as any

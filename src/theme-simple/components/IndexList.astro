@@ -2,6 +2,8 @@
 import { config } from "@/theme-simple/config";
 import { getCollection } from "astro:content";
 const posts = await getCollection("blog");
+
+const {directoryExclusion} = config.util
  
 ---
 <div class="flex justify-center pt-4  w-full">
@@ -19,18 +21,22 @@ const posts = await getCollection("blog");
               </div>
               <div class="w-3/5 md:w-3/4 ml-4 flex flex-col justify-between">
                 <div>
-                  <div class="title text-xl	mb-2 truncate  hover:text-sky-300 transition ease-in-out delay duration-300">{item.data.title}</div>
+                  <div class="title text-xl	mb-2 truncate  hover:text-sky-300 transition ease-in-out delay duration-300"  >
+                    <a href={ `/blog/${directoryExclusion(item.slug)}`} title={item.data.name}>
+                      {item.data.title}
+                    </a>
+                    </div>
                   <div class="w-full flex">
-                    <p class="flex-shrink-0 w-4/5 overflow-hidden line-clamp-2 w-full text-sm  hover:text-sky-300 transition ease-in-out delay duration-300">{item.data.description}</p>
+                    <p class="flex-shrink-0 w-4/5 overflow-hidden line-clamp-2 w-full text-sm  hover:text-sky-300 transition ease-in-out delay duration-300">
+                      <a href={ `/blog/${directoryExclusion(item.slug)}`} title={item.data.name}>  {item.data.description} </a>
+                      </p>
                   </div>
                 </div>
-
                 <div class="flex justify-between leading-8 mt-2 text-sm">
                   <div class="flex ">
                     <div class=" hover:text-sky-300 transition ease-in-out delay duration-300"> { config.util.convertTime(item.data.pubDate,'YYYY-MM-DD') } </div>
-                  
                   </div>
-                  <div>
+                    <div style="display: none;" >
                     <div class=" hover:text-sky-300 transition ease-in-out delay duration-300">分类1</div>
                   </div>
                 </div>
