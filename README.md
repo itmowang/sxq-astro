@@ -1,46 +1,40 @@
-# Astro Starter Kit: Minimal
+## 个人Astro主题 - SXQ
 
-```
-npm create astro@latest -- --template minimal
-```
+一款 Astro 的二次元风格捏，应该会有人喜欢的，正在慢慢完善中，欢迎指出问题提出意见。
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+Github 项目地址 ：[https://github.com/itmowang/sxq-astro](https://github.com/itmowang " 魔王，应该有魔王的姿态 ")
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### 使用方式
+``` bash
+    # 强烈要求 Node 版本在 18x + 
+    npm i -g pnpm
 
-## 🚀 Project Structure
+    pnpm install
+    
+    pnpm build
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro  # 首页路由
-└── package.json
+    然后将docs目录内的文件部署到服务器上，同样的也可以直接使用 github 的 pages 根据自己的喜好来。
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### 预览图 
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+包含移动端 PC端 平板端的不同样式
 
-Any static assets, like images, can be placed in the `public/` directory.
+预览地址: https://blog2.loli.wang
 
-## 🧞 Commands
+![切图1](http://img.blog.loli.wang/2023-9-04-astroxxq/01.png)
 
-All commands are run from the root of the project, from a terminal:
+![切图2](http://img.blog.loli.wang/2023-9-04-astroxxq/02.png)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+![切图3](http://img.blog.loli.wang/2023-9-04-astroxxq/03.jpg)
+
+![切图4](http://img.blog.loli.wang/2023-9-04-astroxxq/04.jpg)
+
+![切图5](http://img.blog.loli.wang/2023-9-04-astroxxq/05.png)
+
+![切图6](http://img.blog.loli.wang/2023-9-04-astroxxq/06.jpg)
+
+![切图6](http://img.blog.loli.wang/2023-9-04-astroxxq/07.jpg)
 
 ## 👀 Want to learn more?
 
