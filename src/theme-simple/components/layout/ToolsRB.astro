@@ -10,16 +10,17 @@
     <i id="darkIcon" class="iconfont blog-taiyang" style="font-size: 30px;"></i>
   </div>
   <div
-    id="darkToggle"
+    id="toggleF11"
     class="rounded-full bg-white w-[40px] h-[40px] flex justify-center items-center text-sky-400 dark:bg-darkBg2 dark:text-sky-600 shadow-xl mt-2"
   >
-  <svg class="icon svg-icon" aria-hidden="true" >
-    <use xlink:href="#blog-tiantianquan-01"></use>
-  </svg>
+    <svg class="icon svg-icon" aria-hidden="true">
+      <use xlink:href="#blog-tiantianquan-01"></use>
+    </svg>
   </div>
 </div>
 
 <script>
+  //   切换模式
   const theme = (() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
@@ -46,6 +47,42 @@
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
+  const handleToggleByClick = () => {
+    const wavesSvg = document.getElementById("wavesSvg");
+    const waves = wavesSvg?.querySelectorAll("use");
+    const theme = localStorage.getItem("theme");
+    waves?.forEach((wave, idx) => {
+    //   const currentFill = wave.getAttribute("fill");
+      if (theme != "dark") {
+        if (idx == 0) {
+            wave.setAttribute("fill",'rgba(255,255,255,0.7)');
+        }
+        if (idx == 1) {
+            wave.setAttribute("fill",'rgba(255,255,255,0.5)');
+        }
+        if (idx == 2) {
+            wave.setAttribute("fill",'rgba(255,255,255,0.3)');
+        }
+        if (idx == 3) {
+            wave.setAttribute("fill",'rgba(255,255,255,0.2)');
+        }
+      }else{
+        if (idx == 0) {
+            wave.setAttribute("fill",'rgba(66,66,66,0.7)');
+        }
+        if (idx == 1) {
+            wave.setAttribute("fill",'rgba(66,66,66,0.5)');
+        }
+        if (idx == 2) {
+            wave.setAttribute("fill",'rgba(66,66,66,0.3)');
+        }
+        if (idx == 3) {
+            wave.setAttribute("fill",'rgba(66,66,66,0.2)');
+        }
+      }
+    });
+  };
+
   const handleDarkToggle = () => {
     const darkIcon = document.getElementById("darkIcon");
     // const darkToggle = document.getElementById('darkToggle')
@@ -60,9 +97,23 @@
       darkIcon?.classList.add("blog-taiyang");
     }
     handleToggleClick();
+    handleToggleByClick();
   };
+  const fullScreenClick = () =>{
+    document.documentElement.requestFullscreen();
+  }
+
 
   document
     ?.getElementById("darkToggle")
     ?.addEventListener("click", handleDarkToggle);
+
+  document
+    ?.getElementById("toggleF11")
+    ?.addEventListener("click", fullScreenClick);
+
+
+    handleToggleByClick()
+
+
 </script>

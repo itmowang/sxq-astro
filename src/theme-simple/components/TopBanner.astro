@@ -31,6 +31,7 @@ const { title , desc } = Astro.props as IProps;
   <!--  云朵波浪 -->
   <div class="absolute bottom-0 w-full">
     <svg
+    id="wavesSvg"
       class="waves"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -45,7 +46,7 @@ const { title , desc } = Astro.props as IProps;
         ></path>
       </defs>
       <g class="parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7"
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)"
         ></use>
         <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"
         ></use>
@@ -56,6 +57,6 @@ const { title , desc } = Astro.props as IProps;
       </g>
     </svg>
   </div>
-
-
 </div>
+
+ 

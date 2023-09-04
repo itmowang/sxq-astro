@@ -4,9 +4,9 @@ import { getCollection } from "astro:content";
 const posts = await getCollection("blog");
  
 ---
-<div class="flex justify-center mt-4 w-full">
+<div class="flex justify-center pt-4  w-full">
   <div class="container">
-    <div class="grid gap-4 lg:grid-cols-2 md:grid-cols-2 ">
+    <div class="grid gap-4 lg:grid-cols-2 md:grid-cols-2">
       {
         posts.map((item) => {
           return (
