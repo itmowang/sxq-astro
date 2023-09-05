@@ -98,12 +98,12 @@
     }
     handleToggleClick();
     handleToggleByClick();
+    window.location.reload()
   };
   
   const fullScreenClick = () =>{
     document.documentElement.requestFullscreen();
   }
-
 
   document
     ?.getElementById("darkToggle")
@@ -112,9 +112,7 @@
   document
     ?.getElementById("toggleF11")
     ?.addEventListener("click", fullScreenClick);
-
-
+    
     handleToggleByClick()
-
 
 </script>
