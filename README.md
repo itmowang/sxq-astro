@@ -18,16 +18,17 @@ Github 项目地址 ：[https://github.com/itmowang/sxq-astro](https://github.co
 
 ### 发布文章格式
 
+``` bash
 ---
-title: "文章标题"  
-pubDate: 2021-03-27 09:45:11 
-description: "文章描述。"
-heroImage: "http://img.blog.loli.wang/2023-8-21-cfworkerProxy/01.png"
-tags: []
+title: "文章标题"   # 文章标题
+pubDate: 2021-03-27 09:45:11  # 发布日期
+description: "文章描述。"  # 文章描述
+heroImage: "http://img.blog.loli.wang/2023-8-21-cfworkerProxy/01.png" # 主页预览图
 ---
+    # mdx
+    文章内容
 
- 文章内容
-
+```
 
 ### 预览图 
 
