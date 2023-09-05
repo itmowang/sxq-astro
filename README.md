@@ -16,6 +16,19 @@ Github 项目地址 ：[https://github.com/itmowang/sxq-astro](https://github.co
     然后将docs目录内的文件部署到服务器上，同样的也可以直接使用 github 的 pages 根据自己的喜好来。
 ```
 
+### 发布文章格式
+
+---
+title: "文章标题"  
+pubDate: 2021-03-27 09:45:11 
+description: "文章描述。"
+heroImage: "http://img.blog.loli.wang/2023-8-21-cfworkerProxy/01.png"
+tags: []
+---
+
+ 文章内容
+
+
 ### 预览图 
 
 包含移动端 PC端 平板端的不同样式
