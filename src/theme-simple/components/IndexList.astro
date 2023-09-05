@@ -2,9 +2,10 @@
 import { config } from "@/theme-simple/config";
 import { getCollection } from "astro:content"; 
 
-const {directoryExclusion} = config.util 
+const {directoryExclusion} = config.util ;
+const {archive} = config;
 const astronautPages = await getCollection("blog");
-const posts = astronautPages.slice(0, 10)
+const posts = astronautPages.slice(0, 10) ;
  
 ---
 <div class="flex justify-center pt-4  w-full">
@@ -13,20 +14,22 @@ const posts = astronautPages.slice(0, 10)
       {
         posts.map((item) => {
           return (
-            <div class="basis-1/2 w-full bg-white dark:bg-darkBg2 dark:text-white  rounded-md p-4 h-[150px] shadow flex">
+            <div class="basis-1/2 w-full bg-white dark:bg-darkBg2 dark:text-white rounded-md p-4 h-[150px] shadow flex">
               <div class="w-2/5 md:w-1/4 ">
                 <img
-                  src={item.data.heroImage||"https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/33.jpg"} 
+                  src={item.data.heroImage||archive.defaultHeroImage} 
                   class="h-full object-cover"
                 />
               </div>
               <div class="w-3/5 md:w-3/4 ml-4 flex flex-col justify-between">
                 <div>
-                  <div class="title text-xl	mb-2 truncate  hover:text-sky-300 transition ease-in-out delay duration-300"  >
-                    <a href={ `/blog/${directoryExclusion(item.slug)}`} title={item.data.name}>
+                <div class="w-full flex">
+                  <div class="flex-shrink-0 w-4/5 overflow-hidden line-clamp-1 w-full title text-lg mb-2  hover:text-sky-300 transition ease-in-out delay duration-300"  >
+                    <a  href={ `/blog/${directoryExclusion(item.slug)}`} title={item.data.name}>
                       {item.data.title}
                     </a>
-                    </div>
+                  </div>
+                </div>
                   <div class="w-full flex">
                     <p class="flex-shrink-0 w-4/5 overflow-hidden line-clamp-2 w-full text-sm  hover:text-sky-300 transition ease-in-out delay duration-300">
                       <a href={ `/blog/${directoryExclusion(item.slug)}`} title={item.data.name}>  {item.data.description} </a>

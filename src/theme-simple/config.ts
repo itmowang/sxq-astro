@@ -1,4 +1,8 @@
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import testImg1 from "@/theme-simple/assets/media/38.jpg";
+import testImg2 from "@/theme-simple/assets/media/37.jpg"
+import testImg3 from "@/theme-simple/assets/media/36.jpg"
+import testImg4 from "@/theme-simple/assets/media/33.jpg"
 
 const today = new Date();
 const copy = `© ${today.getFullYear()} YOUR NAME HERE.`;
@@ -26,40 +30,43 @@ export const config = {
     archive: {
         title: "Archive",
         description: "Archive description",
+        defaultHeroImage:testImg4.src
     },
     indexBanner:{
         swiper:[
             {
                 title:"欢迎访问本站",
-                imgUrl:"https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/38.jpg",
+                imgUrl:testImg1.src,
                 desc:"欢迎访问本站欢迎访问本站欢迎访问本站",
                 url:"/"
             },
             {
                 title:"欢迎访问本站",
-                imgUrl:"https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/37.jpg",
+                imgUrl:testImg2.src,
                 desc:"欢迎访问本站欢迎访问本站欢迎访问本站",
                 url:"/"
             },
             {
                 title:"欢迎访问本站",
-                imgUrl:"https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/36.jpg",
+                imgUrl:testImg3.src,
                 desc:"欢迎访问本站欢迎访问本站欢迎访问本站",
                 url:"/"
             }
         ],
         recommend1:{
             title:"欢迎访问本站",
-            imgUrl:"https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/36.jpg",
+            imgUrl:testImg3.src,
             desc:"欢迎访问本站欢迎访问本站欢迎访问本站",
             url:"/"
         },
         recommend2:{
             title:"欢迎访问本站",
-            imgUrl:"https://www.toubiec.cn/xiaoqing/themes/Joe/npm/img/33.jpg",
+            imgUrl:testImg4.src,
             desc:"欢迎访问本站欢迎访问本站欢迎访问本站",
             url:"/"
         }
+    },
+    testImg:{
 
     },
     util:{
