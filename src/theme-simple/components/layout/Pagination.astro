@@ -1,0 +1,51 @@
+---
+const { currentPage, lastPage } = Astro.props;
+---
+
+<div class="flex justify-center pt-4 w-full">
+  <div class="container">
+    <div class="flex justify-center mt-4">
+      {/* 分页选择器 */}
+      <div class="flex items-center">
+        <a href={`/astronauts/${currentPage - 1}`}>
+          <button
+            id="prevPage"
+            class="px-2 py-1 rounded-md mr-2 bg-gray-200 dark:bg-darkBg2 hover:bg-gray-300"
+            disabled={currentPage === 1}
+          >
+            上一页
+          </button>
+        </a>
+        <div class="flex items-center">
+          <span class="mr-2">第</span>
+          <select id="selectPage" value={currentPage}  class="px-2 py-1 rounded-md bg-gray-200 dark:bg-darkBg2 hover:bg-gray-300"  >
+            {Array.from({ length: lastPage }, (_, i) => i + 1).map((page) => (
+            <option value={page} selected={page === currentPage}>
+              {page}
+            </option>
+          ))}
+          </select>
+          <span class="ml-2"> 页</span>
+        </div>
+        <a href={`/astronauts/${currentPage + 1}`}>
+          <button
+            id="nextPage"
+            class="px-2 py-1 rounded-md ml-2 bg-gray-200 dark:bg-darkBg2 hover:bg-gray-300"
+            disabled={currentPage === lastPage}
+          >
+            下一页
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    const pages = document.getElementById('selectPage');
+    const handlePageChange = (e)=>{
+        location.href = `/astronauts/${e.target.value}`
+    }
+    pages?.addEventListener('change',handlePageChange)
+
+</script>

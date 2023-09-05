@@ -6,10 +6,13 @@ import IndexBanner from "@/theme-simple/components/IndexBanner.astro";
 import IndexList from "@/theme-simple/components/IndexList.astro";
 import Footer from "@/theme-simple/components/Footer.astro";
 
-import "@/theme-simple/assets/styles/global.less";
+import Pagination from "@/theme-simple/components/layout/Pagination.astro";
 import ContentHtml from '@/theme-simple/components/layout/Content.astro'
+
+import "@/theme-simple/assets/styles/global.less";
 import { config } from "@/theme-simple/config";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
+
 ---
 
 <html lang="en">
@@ -23,6 +26,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 	  <ContentHtml>
 		<IndexBanner />
         <IndexList />
+        <Pagination currentPage={1} lastPage={2} />
 		<Footer/>
 	  </ContentHtml>
     </div>

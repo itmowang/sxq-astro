@@ -1,9 +1,10 @@
 ---
 import { config } from "@/theme-simple/config";
-import { getCollection } from "astro:content";
-const posts = await getCollection("blog");
+import { getCollection } from "astro:content"; 
 
-const {directoryExclusion} = config.util
+const {directoryExclusion} = config.util 
+const astronautPages = await getCollection("blog");
+const posts = astronautPages.slice(0, 10)
  
 ---
 <div class="flex justify-center pt-4  w-full">

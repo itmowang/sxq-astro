@@ -8,7 +8,7 @@ export const config = {
         url:"/",
         title:SITE_TITLE,
         description:SITE_DESCRIPTION,
-        favicon: "/favicon.svg",
+        favicon: "/favicon.ico",
         image: "/placeholder-social.jpg", // default image for meta tag.
         copy: copy,
         locales: "zh-CN", // 'en-us'
