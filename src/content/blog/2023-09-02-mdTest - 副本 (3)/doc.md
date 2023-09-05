@@ -2,7 +2,7 @@
 title: "测试文章，带着这些问题，我们来审视一下野王。"
 pubDate: 2021-03-27 09:45:11
 description: "带着这些问题，我们来审视一下野王。 既然如此， 生活中，若野王出现了，我们就不得不考虑它出现了的事实。 富勒曾经说过，苦难磨炼一些人，也毁灭另一些人。我希望诸位也能好好地体会这句话。 野王，到底应该如何实现。"
-heroImage: "http://img.blog.loli.wang/2023-9-04-astroxxq/01.png"
+heroImage: "http://img.blog.loli.wang/2023-9-01-AsTro/01.png"
 tags: []
 ---
 

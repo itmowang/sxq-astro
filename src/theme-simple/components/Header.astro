@@ -82,24 +82,26 @@ document.getElementById("pcSearch")?.addEventListener("click", function (event) 
 document.getElementById("mobieSearch")?.addEventListener("click", function (event) {
   event.stopPropagation();
   mobieSearch && (mobieSearch.style.display = mobieSearch.style.display === "none" ? "block" : "none");
+  mobieMenu && (mobieMenu.style.display = "none")
 });
 
 document.getElementById("mobieMenu")?.addEventListener("click", function (event) {
   event.stopPropagation();
   mobieMenu && ( mobieMenu.style.display = mobieMenu.style.display === "none" ? "block" : "none");
+  mobieSearch && (mobieSearch.style.display = "none")
 });
 
 document.addEventListener("click", function (event) {
-  if (event.target !== pcSearch) {
-    pcSearch && (pcSearch.style.display = "none");
+  if (!pcSearch.contains(event.target)) {
+    pcSearch.style.display = "none";
   }
 
-  if (event.target !== mobieSearch) {
-    mobieSearch && (mobieSearch.style.display = "none");
+  if (!mobieSearch.contains(event.target)) {
+    mobieSearch.style.display = "none";
   }
 
-  if (event.target !== mobieMenu) {
-    mobieMenu && (mobieMenu.style.display = "none");
+  if (!mobieMenu.contains(event.target)) {
+    mobieMenu.style.display = "none";
   }
 });
 </script>
