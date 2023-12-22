@@ -113,8 +113,8 @@ const recommend2 = config.indexBanner.recommend2;
     showSlide(currentIndex);
   }
 
-  prevBtn.addEventListener("click", prevSlide);
-  nextBtn.addEventListener("click", nextSlide);
+  prevBtn && prevBtn.addEventListener("click", prevSlide);
+  nextBtn && nextBtn.addEventListener("click", nextSlide);
 
   showSlide(currentIndex);
 
